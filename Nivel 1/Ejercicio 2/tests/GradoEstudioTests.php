@@ -1,6 +1,5 @@
 <?php
 use PHPUnit\Framework\TestCase;
-include 'GradoEstudio.php';
 
 class GradoEstudioTest extends TestCase {
     private $nota;
