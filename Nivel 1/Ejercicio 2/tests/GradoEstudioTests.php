@@ -4,7 +4,7 @@ use PHPUnit\Framework\TestCase;
 class GradoEstudioTest extends TestCase {
     private $nota;
 
-    public function setUp(): void { //este metodo prepara los test unitarios instanciando cada ves un objeto con el valor que se indique
+    public function setUp(): void { //este metodo prepara los test unitarios instanciando cada vez
         $this->nota = new GradoEstudio(0);
     }
 
