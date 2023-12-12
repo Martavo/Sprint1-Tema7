@@ -6,9 +6,11 @@ class GradoEstudioTest extends TestCase {
      * @dataProvider gradoProvider
      */
     public function testGrado($nota, $expectedResult) {
-        $estudiante = new GradoEstudio($nota);
-        $this->assertEquals($expectedResult, $estudiante->calcularGradoEstudio());
+        $GradoEstudio = new GradoEstudio($nota);
+        $result = $GradoEstudio->calcularGradoEstudio();
+        $this->assertEquals($expectedResult, $result);
     }
+
 
     public function gradoProvider() { //Se indica los valores que se revisan y las espectativas de mensajes correspondientes
         return [

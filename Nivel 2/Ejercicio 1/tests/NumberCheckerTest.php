@@ -6,28 +6,28 @@ class NumberCheckerTest extends TestCase
     /**
      * @dataProvider numbersProvider
      */
-    public function testIsEven($num) //DP para saber si es par
+    public function testIsEven($num, $expected) //DP para saber si es par
     {
         $numberChecker = new NumberChecker($num);
-        $this->assertTrue($numberChecker->isEven());
+        $result = $numberChecker->IsEven();
+        $this->assertEquals($expected, $result);
     }
 
     /**
      * @dataProvider numbersProvider
      */
-    public function testIsPositive($num) //DP para saber si es positivo
+    public function testIsPositive($num, $expected) //DP para saber si es positivo
     {
         $numberChecker = new NumberChecker($num);
-        $this->assertTrue($numberChecker->isPositive());
+        $result = $numberChecker->isPositive();
+        $this->assertEquals($expected, $result);
     }
 
     public function numbersProvider() //se va usando cada valor del array para no repetir metodos
     {
         return [
-            [8],
-            [6],
-            [4],
-            [2],
+            [8, true],
+            [-5, false],
         ];
     }
 }
