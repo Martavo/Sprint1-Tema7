@@ -1,19 +1,32 @@
 <?php
-include 'GradoEstudio.php';
 use PHPUnit\Framework\TestCase;
-
 class GradoEstudioTest extends TestCase {
-    private $nota;
 
-    public function setUp(): void {
-        $this->nota = new GradoEstudio(0);
+    public function testCalcularGrado_Estudio_PrimerDivision() {
+        $notaEstudio = new GradoEstudio(0);
+        $result = $notaEstudio->CalcularGrado_Estudio(70);
+        $this->assertEquals("Corresponde a la primera división", $result);
     }
 
-    public function testVerificarGradoEstudio() {
-        $this->assertEquals("Corresponde a la primera división", $this->nota->CalcularGrado_Estudio());
-        $this->assertEquals("Corresponde a la segunda división", $this->nota->CalcularGrado_Estudio());
-        $this->assertEquals("Corresponde a la tercera división", $this->nota->CalcularGrado_Estudio());
-        $this->assertEquals("Tienes que volver a repetir", $this->nota->CalcularGrado_Estudio());
+    public function testCalcularGrado_Estudio_SegundaDivision() {
+        $notaEstudio = new GradoEstudio(0);
+        $result = $notaEstudio->CalcularGrado_Estudio(50);
+        $this->assertEquals("Corresponde a la segunda división", $result);
+    }
+
+    public function testCalcularGrado_Estudio_TerceraDivision() {
+        $notaEstudio = new GradoEstudio(0);
+        $result = $notaEstudio->CalcularGrado_Estudio(40);
+        $this->assertEquals("Corresponde a la tercera división", $result);
+    }
+
+    public function testCalcularGrado_Estudio_Repetir() {
+        $notaEstudio = new GradoEstudio(0);
+        $result = $notaEstudio->CalcularGrado_Estudio(20);
+        $this->assertEquals("Tienes que volver a repetir", $result);
     }
 }
+
+
+
 ?>
