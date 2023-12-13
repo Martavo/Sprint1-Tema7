@@ -6,6 +6,7 @@ class NumberCheckerTest extends TestCase{
 
     public function setUp():void{ //indicamos con que numero queremos testear
         $this->num = new NumberChecker(8);
+        $this->num = new NumberChecker(-5);
     }
 
     public function testEsNumPar(){ //metodo para testear si es par

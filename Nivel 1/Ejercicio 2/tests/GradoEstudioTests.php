@@ -22,7 +22,7 @@ class GradoEstudioTest extends TestCase {
 
     public function testCalcularGrado_Estudio_Repetir() {
         $notaEstudio = new GradoEstudio(0);
-        $result = $notaEstudio->CalcularGrado_Estudio(20);
+        $result = $notaEstudio->CalcularGrado_Estudio(40);
         $this->assertEquals("Tienes que volver a repetir", $result);
     }
 }
